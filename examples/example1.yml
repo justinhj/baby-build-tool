@@ -1,0 +1,6 @@
+# Sample baby build config
+name: "test1"
+organisation: "com.example"
+version: "2.0-SNAPSHOT"
+scalaVersion: "2.12.4"
+
