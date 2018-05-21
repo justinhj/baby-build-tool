@@ -1,4 +1,4 @@
-package com.justinhj
+package com.justinhj.babybuildtool
 
 import org.scalatest._
 

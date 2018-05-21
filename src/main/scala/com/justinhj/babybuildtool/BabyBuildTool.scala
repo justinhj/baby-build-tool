@@ -1,10 +1,6 @@
-package com.justinhj
+package com.justinhj.babybuildtool
 
-import io.circe._
-import io.circe.yaml
-
-// Command line driver
-// Simply converts the provided yml file to an sbt build file
+import io.circe.{Json, ParsingFailure, yaml}
 
 object BabyBuildTool {
 

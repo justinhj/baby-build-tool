@@ -1,5 +1,14 @@
 import sbt._
 
+lazy val babybuildtool = (project in file(".")).
+    settings (
+      name := "babybuildtool",
+      organization := "com.justinhj",
+      version := "0.2-SNAPSHOT",
+      scalaVersion := "2.12.6"
+      // add other settings here
+    )
+
 /* scala versions and options */
 scalaVersion := "2.12.6"
 
@@ -43,6 +52,7 @@ libraryDependencies ++= Seq(
   // -- json/circe --
   "io.circe" %% "circe-core" % CirceVersion,
   "io.circe" %% "circe-generic" % CirceVersion,
+  "io.circe" %% "circe-parser" % CirceVersion,
   "io.circe" %% "circe-jawn" % CirceVersion,
   "io.circe" %% "circe-yaml" % "0.8.0",
   // monix
@@ -85,12 +95,12 @@ sourceGenerators in Test += Def.task {
 }.taskValue
 
 // Optional, required for the `source` command to work
-(fullClasspath in Test) ++= {
-  (updateClassifiers in Test).value
-    .configurations
-    .find(_.configuration == Test.name)
-    .get
-    .modules
-    .flatMap(_.artifacts)
-    .collect{case (a, f) if a.classifier == Some("sources") => f}
-}
+// (fullClasspath in Test) ++= {
+//   (updateClassifiers in Test).value
+//     .configurations
+//     .find(_.configuration == Test.name)
+//     .get
+//     .modules
+//     .flatMap(_.artifacts)
+//     .collect{case (a, f) if a.classifier == Some("sources") => f}
+// }
